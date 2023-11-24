@@ -1,5 +1,5 @@
 .button {
-  color: #fff;
+  color: $white;
   font-size: 13px;
   font-weight: 500;
   line-height: 13px;
@@ -41,7 +41,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: #1E1E1E;
 
   &__status {
     text-align: center;
@@ -61,4 +60,17 @@
   &__back {
     @include link;
   }
+}
+
+.list {
+  @include ul;
+
+  &__item {
+    @include li;
+
+    &_mt {
+      margin-top: 20px;
+    }
+  }
+
 }

@@ -10,3 +10,11 @@
   color: $primary;
   @include hover;
 }
+
+@mixin ul {
+  padding: 0;
+}
+
+@mixin li {
+  list-style: none;
+}
