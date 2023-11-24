@@ -1,0 +1,22 @@
+
+{{#> layouts/page title="Login Page"}}
+<link rel="stylesheet" href="/src/styles.scss" />
+<div class="error-page">
+  <h3 class="error-page__status">404</h3>
+  <p class="error-page__desc">Не туда попали</p>
+  {{> link/link href="/" class="error-page__back" label='Назад к чатам' }}
+  <!-- <a href="/" class="error-page__back">Назад к чатам</a> -->
+</div>
+{{/ layouts/page}}
+
+<!-- import { compile } from 'handlebars';
+
+const notFoundRender = compile(`
+<div class="error-page">
+  <h3 class="error-page__status">404</h3>
+  <p class="error-page__desc">Не туда попали</p>
+  <a href="/" class="error-page__back">Назад к чатам</a>
+</div>
+`); -->
+
+export default notFoundRender;

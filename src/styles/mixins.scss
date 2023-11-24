@@ -1,0 +1,12 @@
+@mixin hover {
+  &:hover {
+    cursor: pointer;
+    opacity: .9;
+  }
+}
+
+@mixin link {
+  text-decoration: none;
+  color: $primary;
+  @include hover;
+}

@@ -1,0 +1,61 @@
+
+{{#> layouts/page title="Login Page"}}
+<link rel="stylesheet" href="/src/styles.scss" />
+<div class="login">
+  <h1 class="login__title">Регистрация</h1>
+  <form class="login__form">
+    <div class="login__form-group">
+      {{#each signup.inputs }}
+      {{> label/label for=this.for classLabel=this.classLabel label=this.title }}
+      {{> input/input type=this.type placeholder=this.placeholder name=this.name classInput=this.classInput}}
+      {{/each}}
+    </div>
+    {{> button/button label="Зарегистрироваться" }}
+    {{> link/link class="login__link" href="/index.html" label='Войти' }}
+
+  </form>
+
+</div>
+{{/ layouts/page}}
+
+<!-- import { compile } from 'handlebars';
+
+const registerRender = compile(`
+<div class="login">
+  <h1 class="login__title">Регистрация</h1>
+  <form class="login__form">
+    <div class="login__form-group">
+      <label for="email" class="login__label">Почта</label>
+      <input type="email" id="email" name="email" class="login__input" placeholder="Почта" />
+    </div>
+    <div class="login__form-group">
+      <label for="login" class="login__label">Логин</label>
+      <input type="text" id="login" name="login" class="login__input" placeholder="Логин" />
+    </div>
+    <div class="login__form-group">
+      <label for="first_name" class="login__label">Имя</label>
+      <input type="text" id="first_name" name="first_name" class="login__input" placeholder="Имя" />
+    </div>
+    <div class="login__form-group">
+      <label for="second_name" class="login__label">Фамилия</label>
+      <input type="text" id="second_name" name="second_name" class="login__input" placeholder="Фамилия" />
+    </div>
+    <div class="login__form-group">
+      <label for="phone" class="login__label">Телефон</label>
+      <input type="tel" id="phone" name="phone" class="login__input" placeholder="Телефон" />
+    </div>
+    <div class="login__form-group">
+      <label for="password" class="login__label">Пароль</label>
+      <input type="password" id="password" name="password" class="login__input input_password" placeholder="Пароль" />
+    </div>
+    <div class="login__form-group">
+      <label for="password2" class="login__label">Пароль (еще раз)</label>
+      <input type="password" id="password2" name="password2" class="login__input input_password" placeholder="Пароль" />
+    </div>
+    <button type="submit" class="button">Зарегистрироваться</button>
+    <a class="login__link" href="/signin">Войти</a>
+  </form>
+</div>
+`);
+
+export default registerRender; -->

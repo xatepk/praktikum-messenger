@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messenger App</title>
+  <link rel="stylesheet" href="/src/styles.scss" />
+</head>
+
+<body>
+  <div id="chat" class="chats">
+    <h3>Обновляем дизайн, скоро вернемся еще более стильными</h3>
+    {{> link/link href="/src/pages/login/login.html" class="profile__info-title profile__info-title_blue profile__info-title_mt" label='Login page' }}
+    {{> link/link href="/src/pages/signup/signup.html" class="profile__info-title profile__info-title_blue profile__info-title_mt" label='Sign up page' }}
+    {{> link/link href='src/pages/profile/profile.html' class="profile__info-title profile__info-title_blue profile__info-title_mt" label='Profile page' }}
+    {{> link/link href="/src/pages/500/500.html" class="profile__info-title profile__info-title_blue profile__info-title_mt" label='Error page' }}
+    {{> link/link href="/src/pages/404/404.html" class="profile__info-title profile__info-title_blue profile__info-title_mt" label='Not Found page' }}
+  </div>
+</body>
+
+</html>

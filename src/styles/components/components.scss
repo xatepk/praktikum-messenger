@@ -1,0 +1,64 @@
+.button {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 13px;
+  width: 100%;
+  max-width: 280px;
+  padding: 12px 0;
+  border: none;
+  border-radius: $buttonRadius;
+  background-color: $primary;
+  margin: 62px auto 0;
+  @include hover;
+
+  &_mt {
+    margin-top: 160px;
+  }
+}
+
+.input {
+  border: none;
+
+  &_tr {
+    text-align: right;
+  }
+
+  &_password {
+    -webkit-text-security: disc;
+    -moz-appearance: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.error-page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #1E1E1E;
+
+  &__status {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 40px;
+    margin: 20px 0;
+  }
+
+  &__desc {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 0 0 70px;
+  }
+
+  &__back {
+    @include link;
+  }
+}

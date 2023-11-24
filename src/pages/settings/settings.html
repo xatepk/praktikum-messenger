@@ -1,0 +1,97 @@
+
+{{#> layouts/page title="Login Page"}}
+<link rel="stylesheet" href="/src/styles.scss" />
+<div class="profile settings">
+  {{> back/back href="/src/pages/profile/profile.html" }}
+<div class="profile__header">
+  <div class="profile__avatar"></div>
+</div>
+<div class="profile__info">
+  <div class="profile__info-item">
+    <h3 class="profile__info-title">Почта</h3>
+    {{> input/input type='email' name="email" classInput="profile__info-value input input_tr"
+    value=this.user.email }}
+    <!-- <input type='email' class="profile__info-value input input_tr" name="email" value={{email}} /> -->
+  </div>
+  <div class="profile__info-item">
+    <h3 class="profile__info-title">Логин</h3>
+    {{> input/input type='text' name="login" classInput="profile__info-value input input_tr"
+    value=this.user.login }}
+    <!-- <input type='text' class="profile__info-value input input_tr" name="login" value={{login}} /> -->
+  </div>
+  <div class="profile__info-item">
+    <h3 class="profile__info-title">Имя</h3>
+    {{> input/input type='text' name="first_name" classInput="profile__info-value input input_tr"
+    value=this.user.firstName }}
+    <!-- <input type='text' class="profile__info-value input input_tr" name="first_name" value={{firstName}} /> -->
+  </div>
+  <div class="profile__info-item">
+    <h3 class="profile__info-title">Фамилия</h3>
+    {{> input/input type='text' name="second_name" classInput="profile__info-value input input_tr"
+    value=this.user.lastName }}
+    <!-- <input type='text' class="profile__info-value input input_tr" name="second_name" value={{lastName}} /> -->
+  </div>
+  <div class="profile__info-item">
+    <h3 class="profile__info-title">Имя в чате</h3>
+    {{> input/input type='text' name="display_name" classInput="profile__info-value input input_tr"
+    value=this.user.displayName }}
+    <!-- <input type='text' class="profile__info-value input input_tr" name="display_name" value={{displayName}} /> -->
+  </div>
+  <div class="profile__info-item">
+    <h3 class="profile__info-title">Телефон</h3>
+    {{> input/input type='tel' name="phone" classInput="profile__info-value input input_tr"
+    value=this.user.phone }}
+    <!-- <input type='tel' class="profile__info-value input input_tr" name="phone" value={{phone}} /> -->
+  </div>
+</div>
+
+{{> button/button label="Сохранить" }}
+
+<!-- <button type="submit" class="button">Сохранить</button> -->
+
+</div>
+{{/ layouts/page}}
+
+<!-- import { compile } from 'handlebars';
+
+const settingsRender = compile(`
+<div class="profile settings">
+      <a href="/" class="profile__line">
+        <span class="profile__back-button"></span>
+      </a>
+    <div class="profile__header">
+      <div class="profile__avatar"></div>
+    </div>
+    <div class="profile__info">
+      <div class="profile__info-item">
+        <h3 class="profile__info-title">Почта</h3>
+        <input type='email' class="profile__info-value input input_tr" name="email" value={{email}} />
+      </div>
+      <div class="profile__info-item">
+        <h3 class="profile__info-title">Логин</h3>
+        <input type='text' class="profile__info-value input input_tr" name="login" value={{login}} />
+      </div>
+      <div class="profile__info-item">
+        <h3 class="profile__info-title">Имя</h3>
+        <input type='text' class="profile__info-value input input_tr" name="first_name" value={{firstName}} />
+      </div>
+      <div class="profile__info-item">
+        <h3 class="profile__info-title">Фамилия</h3>
+        <input type='text' class="profile__info-value input input_tr" name="second_name" value={{lastName}} />
+      </div>
+      <div class="profile__info-item">
+        <h3 class="profile__info-title">Имя в чате</h3>
+        <input type='text' class="profile__info-value input input_tr" name="display_name" value={{displayName}} />
+      </div>
+      <div class="profile__info-item">
+        <h3 class="profile__info-title">Телефон</h3>
+        <input type='tel' class="profile__info-value input input_tr" name="phone" value={{phone}} />
+      </div>
+    </div>
+
+    <button type="submit" class="button">Сохранить</button>
+
+  </div>
+`);
+
+export default settingsRender; -->
