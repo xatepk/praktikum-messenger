@@ -7,7 +7,10 @@
     "start": "npm run build && node ./server.js",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "stylelint": "npx stylelint \"**/*.scss\"",
+    "eslint": "eslint . --ext .ts",
+    "eslint-fix": "eslint . --ext .ts --fix"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +18,12 @@
   "devDependencies": {
     "@types/hbs": "4.0.4",
     "@types/node": "20.10.4",
-    "eslint": "8.55.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
     "sass": "1.69.5",
     "stylelint": "16.0.0",
+    "stylelint-config-standard": "35.0.0",
     "ts-node": "10.9.1",
     "typescript": "5.3.3",
     "vite": "4.4.5",
@@ -29,5 +35,13 @@
   },
   "engines": {
     "node": "18.16.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xatepk/praktikum-messenger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xatepk/praktikum-messenger/issues"
+  },
+  "homepage": "https://github.com/xatepk/praktikum-messenger#readme"
 }

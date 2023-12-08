@@ -1,6 +1,6 @@
 import Block from '../../utils/Block';
 import template from './password.hbs';
-import { render } from "../../utils/render";
+import { render } from '../../utils/render';
 
 
 export class PasswordPage extends Block {
@@ -24,10 +24,10 @@ export class PasswordPage extends Block {
           });
         },
       },
-      class:"profile__info-value input input_tr input_password",
+      class:'profile__info-value input input_tr input_password',
       inputType: 'text',
 
-      inputs: [{name:"oldPassword", title: 'Старый пароль', pattern: '^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,40}$'}, {name:"newPassword", title: 'Новый пароль', pattern: '^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,40}$'}, {name:"newPassword2", title: 'Новый пароль еще раз', pattern: '^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,40}$'} ]
+      inputs: [{ name:'oldPassword', title: 'Старый пароль', pattern: '^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,40}$' }, { name:'newPassword', title: 'Новый пароль', pattern: '^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,40}$' }, { name:'newPassword2', title: 'Новый пароль еще раз', pattern: '^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,40}$' } ]
     });
   }
 

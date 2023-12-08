@@ -26,14 +26,18 @@
 
   &__list {
     @include ul;
+
     margin-top: 20px;
   }
 
   &__item {
     @include li;
+
     display: flex;
     align-items: center;
+
     @include hover;
+
     padding-top: 10px;
     padding-bottom: 10px;
     border-top: 1px solid #EAEAEA;
@@ -50,15 +54,16 @@
     display: flex;
     align-items: center;
     padding-bottom: 10px;
-    border-bottom: 1px solid #EAEAEA;
+    border-bottom: 1px solid #eaeaea;
   }
 
   &__message {
     border-radius: 30px;
-    background: #EFEFEF;
+    background: #efefef;
     border: none;
     padding: 10px 20px;
     flex: 1;
+
     &:focus {
       outline: none;
     }
