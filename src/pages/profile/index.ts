@@ -7,7 +7,6 @@ export class ProfilePage extends Block {
   constructor() {
     super({
       type: 'button',
-      onClick: () => { render('home') },
       user: {
         firstName: 'Иван',
         lastName: 'Иванов',
