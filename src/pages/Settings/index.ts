@@ -1,10 +1,12 @@
 import Block from '../../utils/Block';
 import template from './settings.hbs';
+import { render } from '../../utils/render';
 
 export class SettingsPage extends Block {
   constructor() {
     super({
       type: 'button',
+      onClick: () => { render('profile') },
       events: {
         submit: (event: Event) => {
           event.preventDefault();
