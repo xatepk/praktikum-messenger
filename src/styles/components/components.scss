@@ -19,11 +19,13 @@
   border-radius: $buttonRadius;
   background-color: $primary;
   margin: 62px auto 0;
+
   @include hover;
 
   &_st {
     border: none;
     background-color: transparent;
+
     @include hover;
   }
 
@@ -41,7 +43,6 @@
 
   &_password {
     -webkit-text-security: disc;
-    -moz-appearance: none;
   }
 
   &_invalid + span {
@@ -92,6 +93,7 @@
 
   &__item {
     @include li;
+
     text-align: center;
 
     &_mt {

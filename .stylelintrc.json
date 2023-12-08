@@ -1,9 +1,14 @@
 {
   "extends": "stylelint-config-standard",
   "rules": {
-    "color-hex-case": "lower"
+    "import-notation": "string",
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": ["include", "mixin"]
+    }],
+    "alpha-value-notation": "number"
   },
   "ignoreFiles": [
-    "build/*"
+    "build/*",
+    "src/styles/vendor/*"
   ]
-} 
+}

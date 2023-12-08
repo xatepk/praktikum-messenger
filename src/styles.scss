@@ -3,7 +3,9 @@
 @import '/styles/mixins.scss';
 @import '/styles/vendor/normalize.scss';
 @import '/styles/components/components.scss';
-
+@import '/pages/login/login';
+@import '/pages/profile/profile';
+@import '/pages/chats/chats';
 
 html, body {
   font-size: 15px;
@@ -19,8 +21,3 @@ body {
 #app {
   display: flex;
 }
-
-
-@import '/pages/login/login';
-@import '/pages/profile/profile';
-@import '/pages/chats/chats';
