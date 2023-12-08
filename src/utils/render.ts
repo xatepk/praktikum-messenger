@@ -4,9 +4,9 @@ import { PasswordPage } from '../pages/Password';
 import { NotFoundPage } from '../pages/404';
 import { ServerErrorPage } from '../pages/500';
 import { RegisterPage } from '../pages/Register';
-import { LoginPage } from '../pages/SignIn';
-import { ChatsPage } from '../pages/Messages';
-import { ProfilePage } from '../pages/UserProfile';
+import { LoginPage } from '../pages/Login';
+import { ChatsPage } from '../pages/Chats';
+import { ProfilePage } from '../pages/Profile';
 
 const ROUTES = {
   'home': HomePage,
