@@ -2,16 +2,11 @@
   "compilerOptions": {
     "target": "es2016",
     "module": "commonjs",
-    "typeRoots": [
-      "./src/typings"
-    ],
+    "typeRoots": ["./node_modules/@types", "./src/typings"],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "lib": [
-      "ESNext",
-      "DOM",
-    ]
+    "lib": ["ESNext", "DOM"]
   }
 }
