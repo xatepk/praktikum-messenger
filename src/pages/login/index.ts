@@ -1,11 +1,13 @@
 import Block from '../../utils/Block';
 import template from './login.hbs';
+import { render } from '../../utils/render';
 
 
 export class LoginPage extends Block {
   constructor() {
     super({
       type: 'button',
+      onClick: () => { render('register') },
       events: {
         submit: (event: Event) => {
           event.preventDefault();

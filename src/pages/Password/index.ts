@@ -1,13 +1,11 @@
 import Block from '../../utils/Block';
 import template from './password.hbs';
-import { render } from '../../utils/render';
 
 
 export class PasswordPage extends Block {
   constructor() {
     super({
       type: 'button',
-      onClick: () => { render('profile') },
       events: {
         submit: (event: Event) => {
           event.preventDefault();
