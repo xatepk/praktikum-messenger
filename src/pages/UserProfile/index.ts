@@ -3,7 +3,7 @@ import template from './profile.hbs';
 import { render } from '../../utils/render';
 
 
-export default class ProfilePage extends Block {
+export class ProfilePage extends Block {
   constructor() {
     super({
       type: 'button',
