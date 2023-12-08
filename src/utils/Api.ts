@@ -1,14 +1,21 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 const METHODS = {
   GET: 'GET',
-  PUT: 'PUT',
   POST: 'POST',
+  PUT: 'PUT',
   DELETE: 'DELETE',
 };
 
-function queryStringify(data: Record<string, unknown>): string {
-  if (typeof data !== 'object')
-	throw new Error('Data must be object');
+interface RequestOptions {
+  headers?: { [key: string]: string };
+  method?: string;
+  timeout?: number;
+  data?: Record<string, unknown>;
+}
+
+function queryStringify(data: RequestOptions['data']): string {
+  if (!data) {
+    throw new Error('Data must be object');
+  }
 
   const keys = Object.keys(data);
   return keys.reduce((result, key, index) => {
@@ -16,40 +23,29 @@ function queryStringify(data: Record<string, unknown>): string {
   }, '?');
 }
 
-interface RequestOptions {
-  headers?: Record<string, string>;
-  method?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data?: any;
-  timeout?: number;
-}
-
 class HTTPTransport {
-  get = (url: string, options: RequestOptions = {}): Promise<XMLHttpRequest> => {
+  get = (url: string, options: RequestOptions = {}) => {
+
     return this.request(url, { ...options, method: METHODS.GET }, options.timeout);
   };
 
-  put = (url: string, options: RequestOptions = {}): Promise<XMLHttpRequest> => {
-    return this.request(url, { ...options, method: METHODS.PUT }, options.timeout);
-  };
-
-  post = (url: string, options: RequestOptions = {}): Promise<XMLHttpRequest> => {
+  post = (url: string, options: RequestOptions = {}) => {
     return this.request(url, { ...options, method: METHODS.POST }, options.timeout);
   };
 
-  delete = (url: string, options: RequestOptions = {}): Promise<XMLHttpRequest> => {
+  put = (url: string, options: RequestOptions = {}) => {
+    return this.request(url, { ...options, method: METHODS.PUT }, options.timeout);
+  };
+
+  delete = (url: string, options: RequestOptions = {}) => {
     return this.request(url, { ...options, method: METHODS.DELETE }, options.timeout);
   };
 
-  request = (url: string, options: RequestOptions = {}, timeout = 5000): Promise<XMLHttpRequest> => {
+  request = (url: string, options: RequestOptions = {}, timeout = 5000) => {
     const { headers = {}, method, data } = options;
 
-    if (!url) {
-      return Promise.reject('No URL specified');
-    }
-
-    return new Promise<XMLHttpRequest>(function (resolve, reject) {
-			if (!method) {
+    return new Promise(function (resolve, reject) {
+      if (!method) {
         reject('No method');
         return;
       }
@@ -59,19 +55,14 @@ class HTTPTransport {
 
       xhr.open(
         method,
-        isGet && !!data ? `${url}${queryStringify(data)}` : url
+        isGet && !!data
+          ? `${url}${queryStringify(data)}`
+          : url,
       );
 
-      for (const key in headers) {
-        if (Object.prototype.hasOwnProperty.call(headers, key)) {
-          const headerValue = headers[key];
-          if (typeof headerValue === 'string') {
-            xhr.setRequestHeader(key, headerValue);
-          } else {
-            reject(`Invalid header value for key '${key}': ${headerValue}`);
-          }
-        }
-      }
+      Object.keys(headers).forEach(key => {
+        xhr.setRequestHeader(key, headers[key]);
+      });
 
       xhr.onload = function () {
         resolve(xhr);
@@ -86,41 +77,10 @@ class HTTPTransport {
       if (isGet || !data) {
         xhr.send();
       } else {
-        xhr.send(data);
+        xhr.send(data as any);
       }
     });
   };
 }
 
-function fetchWithRetry(url: string, retries: number = 3, options: RequestOptions) {
-
-	function onError(err: unknown, tries: number): Promise<unknown> {
-    const triesLeft = tries - 1;
-    if (!triesLeft) {
-      throw err;
-    }
-    return fetchWithRetry(url, triesLeft, options);
-  }
-
-	return new Promise<unknown>((resolve, reject) => {
-    let tries = retries;
-
-    function doRequest() {
-      new HTTPTransport()
-        .request(url, options)
-        .then(resolve)
-        .catch(err => {
-          onError(err, tries)
-            .then(() => {
-              tries--;
-              doRequest();
-            })
-            .catch(reject);
-        });
-    }
-
-    doRequest();
-  });
- }
-
- export default HTTPTransport;
+export default HTTPTransport;
