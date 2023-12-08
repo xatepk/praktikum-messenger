@@ -6,7 +6,7 @@ import { ServerErrorPage } from '../pages/500';
 import { RegisterPage } from '../pages/Register';
 import { LoginPage } from '../pages/Login';
 import { ChatsPage } from '../pages/Chats';
-import { ProfilePage } from '../pages/Profile';
+import ProfilePage from '../pages/Profile';
 
 const ROUTES = {
   'home': HomePage,
