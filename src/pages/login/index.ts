@@ -7,7 +7,7 @@ export class LoginPage extends Block {
   constructor() {
     super({
       type: 'button',
-      onClick: () => { render('register') },
+      // onClick: () => { render('register') },
       events: {
         submit: (event: Event) => {
           event.preventDefault();
@@ -23,6 +23,7 @@ export class LoginPage extends Block {
             }
           });
         },
+        click: () => { render('register') }
       },
 
       inputs: [
