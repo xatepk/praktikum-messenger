@@ -1,6 +1,6 @@
 <div class="login">
   <h1 class="login__title">Вход</h1>
-  <form class="login__form">
+  <form class="login__form" onsubmit={{this.onSubmit}}>
     <div class="login__form-group">
       {{#each inputs }}
         {{{ Label for=this.for class=this.classLabel label=this.title }}}
@@ -8,7 +8,7 @@
          <span class="input_error">Некорректное значение</span>
       {{/each}}
     </div>
-    {{{Button label='Авторизоваться' class='button' type=../type onClick=this.onRegisterClick}}}
-    {{{Button label='Нет аккаунта?' class='login__link button_st' type=../type onClick=this.onSignUpClick}}}
+    {{{Button label='Авторизоваться' class='button' type='submit'}}}
+    {{{Button label='Нет аккаунта?' class='login__link button_st' type=../type onClick=this.onClick}}}
   </form>
 </div>

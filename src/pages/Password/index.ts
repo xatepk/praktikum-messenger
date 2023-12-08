@@ -8,6 +8,22 @@ export class PasswordPage extends Block {
     super({
       type: 'button',
       onClick: () => { render('profile') },
+      events: {
+        submit: (event: Event) => {
+          event.preventDefault();
+          const target = event.target as HTMLFormElement;
+          const fields = target.querySelectorAll<HTMLInputElement>('input');
+
+          fields.forEach(function (field) {
+            const value = field.value;
+            const pattern = field.getAttribute('pattern') as string;
+
+            if (!value.match(pattern)) {
+              console.log('Неккоректно заполненные данные')
+            }
+          });
+        },
+      },
       class:"profile__info-value input input_tr input_password",
       inputType: 'text',
 

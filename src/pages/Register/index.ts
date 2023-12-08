@@ -7,8 +7,23 @@ export class RegisterPage extends Block {
   constructor() {
     super({
       type: 'button',
-      onRegisterClick: () => { render('home') },
-      onSignInClick: () => { render('login') },
+      onClick: () => { render('login') },
+      events: {
+        submit: (event: Event) => {
+          event.preventDefault();
+          const target = event.target as HTMLFormElement;
+          const fields = target.querySelectorAll<HTMLInputElement>('input');
+
+          fields.forEach(function (field) {
+            const value = field.value;
+            const pattern = field.getAttribute('pattern') as string;
+
+            if (!value.match(pattern)) {
+              console.log('Неккоректно заполненные данные')
+            }
+          });
+        },
+      },
 
       inputs: [
         {
@@ -81,7 +96,7 @@ export class RegisterPage extends Block {
           title: 'Пароль (еще раз)',
           pattern: '^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,40}$'
         },
-      ]
+      ],
     });
   }
 

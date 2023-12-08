@@ -7,7 +7,22 @@ export class SettingsPage extends Block {
   constructor() {
     super({
       type: 'button',
-      onClick: () => { render('profile') },
+      events: {
+        submit: (event: Event) => {
+          event.preventDefault();
+          const target = event.target as HTMLFormElement;
+          const fields = target.querySelectorAll<HTMLInputElement>('input');
+
+          fields.forEach(function (field) {
+            const value = field.value;
+            const pattern = field.getAttribute('pattern') as string;
+
+            if (!value.match(pattern)) {
+              console.log('Неккоректно заполненные данные')
+            }
+          });
+        },
+      },
       class:"profile__info-value input input_tr",
 
       inputs: [{type:'email', name:"email", title:'Почта', value:'pochta@yandex.ru', pattern: '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$'}, {type:'text', name:"login",
