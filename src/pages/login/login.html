@@ -1,0 +1,17 @@
+{{#> layouts/page title="Login Page"}}
+<link rel="stylesheet" href="/src/styles.scss" />
+<div class="login">
+  <h1 class="login__title">Вход</h1>
+  <form class="login__form">
+    <div class="login__form-group">
+      {{#each login.inputs }}
+      {{> label/label for=this.for classLabel=this.classLabel label=this.title }}
+      {{> input/input type=this.type placeholder=this.placeholder name=this.name classInput=this.classInput}}
+      {{/each}}
+    </div>
+    {{> button/button label="Авторизоваться" }}
+    {{> link/link class="login__link" href="/src/pages/register/register.html" label='Нет аккаунта?' }}
+  </form>
+
+</div>
+{{/ layouts/page}}

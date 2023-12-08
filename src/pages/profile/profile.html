@@ -1,0 +1,48 @@
+{{#> layouts/page title="Login Page"}}
+<link rel="stylesheet" href="/src/styles.scss" />
+<div class="profile">
+  {{> back/back href="/index.html" }}
+  <div class="profile__header">
+    <div class="profile__avatar"></div>
+    <p class="profile__info-title profile__info-title_fw">{{user.firstName}}</p>
+  </div>
+  <div class="profile__info">
+    <div class="profile__info-item">
+      <h3 class="profile__info-title">Почта</h3>
+      <span class="profile__info-value">{{user.email}}</span>
+    </div>
+    <div class="profile__info-item">
+      <h3 class="profile__info-title">Логин</h3>
+      <span class="profile__info-value">{{user.login}}</span>
+    </div>
+    <div class="profile__info-item">
+      <h3 class="profile__info-title">Имя</h3>
+      <span class="profile__info-value">{{user.firstName}}</span>
+    </div>
+    <div class="profile__info-item">
+      <h3 class="profile__info-title">Фамилия</h3>
+      <span class="profile__info-value">{{user.lastName}}</span>
+    </div>
+    <div class="profile__info-item">
+      <h3 class="profile__info-title">Имя в чате</h3>
+      <span class="profile__info-value">{{user.displayName}}</span>
+    </div>
+    <div class="profile__info-item">
+      <h3 class="profile__info-title">Телефон</h3>
+      <span class="profile__info-value">{{user.phone}}</span>
+    </div>
+  </div>
+
+  <div class="profile__info-item profile__info-item_mt">
+    {{> link/link href="/src/pages/settings/settings.html" class="profile__info-title profile__info-title_blue"
+    label='Изменить данные' }}
+  </div>
+  <div class="profile__info-item">
+    {{> link/link href="/src/pages/password/password.html" class="profile__info-title profile__info-title_blue"
+    label='Изменить пароль' }}
+  </div>
+  <div class="profile__info-item">
+    {{> link/link href="/index.html" class="profile__info-title profile__info-title_red" label='Выйти' }}
+  </div>
+</div>
+{{/ layouts/page}}

@@ -1,0 +1,26 @@
+
+@import '/src/styles/const.scss';
+@import '/src/styles/mixins.scss';
+@import '/src/styles/vendor/normalize.scss';
+@import '/src/styles/components/components.scss';
+
+
+html, body {
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $black;
+  box-sizing: border-box;
+}
+
+#app {
+  display: flex;
+}
+
+
+@import '/src/pages/login/login';
+@import '/src/pages/profile/profile';
+@import '/src/pages/chats/chats';
