@@ -1,0 +1,16 @@
+<div class="profile settings">
+  {{{BackButton type=this.type onClick=this.onClick}}}
+  <div class="profile__header">
+    <div class="profile__avatar"></div>
+  </div>
+  <form class="profile__info">
+    {{#each inputs}}
+    <div class="profile__info-item">
+      <h3 class="profile__info-title">{{ this.title }}</h3>
+      {{{Input type=this.type name=this.name class=../class value=this.value pattern=this.pattern}}}
+    </div>
+    <span class="input_error">Некорректное значение</span>
+    {{/each}}
+    {{{Button ref="button" label='Сохранить' class="button" type=this.type onClick=this.onClick}}}
+  </form>
+</div>

@@ -1,0 +1,39 @@
+<div class="profile">
+  <div class="profile__header">
+    {{{BackButton type=this.type onClick=this.onClick}}}
+    <div class="profile__avatar"></div>
+    <p class="profile__info-title profile__info-title_fw">{{this.firstName}}</p>
+  </div>
+  <div class="profile__info">
+    <div class="profile__info-item">
+      <h3 class="profile__info-title">Почта</h3>
+      <span class="profile__info-value">{{this.user.email}}</span>
+    </div>
+    <div class="profile__info-item">
+      <h3 class="profile__info-title">Логин</h3>
+      <span class="profile__info-value">{{this.user.login}}</span>
+    </div>
+    <div class="profile__info-item">
+      <h3 class="profile__info-title">Имя</h3>
+      <span class="profile__info-value">{{this.user.firstName}}</span>
+    </div>
+    <div class="profile__info-item">
+      <h3 class="profile__info-title">Фамилия</h3>
+      <span class="profile__info-value">{{this.user.lastName}}</span>
+    </div>
+    <div class="profile__info-item">
+      <h3 class="profile__info-title">Имя в чате</h3>
+      <span class="profile__info-value">{{this.user.displayName}}</span>
+    </div>
+    <div class="profile__info-item">
+      <h3 class="profile__info-title">Телефон</h3>
+      <span class="profile__info-value">{{this.user.phone}}</span>
+    </div>
+  </div>
+
+  {{#each buttons}}
+  <div class="profile__info-item">
+    {{{Button label=this.label class=this.class type=../type onClick=this.onClick}}}
+  </div>
+  {{/each}}
+</div>

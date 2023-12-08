@@ -34,6 +34,7 @@
     font-weight: 500;
     line-height: 9px;
     margin-bottom: 8px;
+    margin-top: 16px;
   }
 
   &__input {
@@ -47,7 +48,6 @@
     width: 100%;
     min-width: 280px;
     border-bottom: 1px solid $primary;
-    margin-bottom: 16px;
 
     &:focus {
       outline: none;
