@@ -1,4 +1,4 @@
-import {PluginOption} from 'vite';
+import { PluginOption } from 'vite';
 import Handlebars from 'handlebars';
 
 export default function vitePluginHandlebarsPrecompile(): PluginOption {

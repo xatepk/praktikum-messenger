@@ -1,8 +1,6 @@
 import Block from '../../utils/Block';
 import template from './404.hbs';
-import { render } from "../../utils/render";
-import { sortUserPlugins } from 'vite';
-
+import { render } from '../../utils/render';
 
 export class NotFoundPage extends Block {
   constructor() {

@@ -1,6 +1,6 @@
 import Block from '../../utils/Block';
 import template from './profile.hbs';
-import { render } from "../../utils/render";
+import { render } from '../../utils/render';
 
 
 export class ProfilePage extends Block {
@@ -9,7 +9,7 @@ export class ProfilePage extends Block {
       type: 'button',
       onClick: () => { render('home') },
       user: {
-        firstName: "Иван",
+        firstName: 'Иван',
         lastName: 'Иванов',
         email: 'pochta@yandex.ru',
         login: 'ivanivanov',

@@ -1,4 +1,4 @@
-import {defineConfig} from 'vite';
+import { defineConfig } from 'vite';
 import { resolve } from 'path'
 import vitePluginHandlebarsPrecompile from './vite-plugin-handelbars-precompile';
 
