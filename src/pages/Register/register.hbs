@@ -1,12 +1,12 @@
 
 <div class="login">
   <h1 class="login__title">Регистрация</h1>
-  <form class="login__form" onsubmit={{this.onSubmit}}>
+  <form class="login__form" novalidate onsubmit={{this.onSubmit}}>
     <div class="login__form-group">
       {{#each inputs }}
         {{{ Label for=this.for class=this.classLabel label=this.title }}}
-        {{{ Input type=this.type placeholder=this.placeholder name=this.name class=this.classInput pattern=this.pattern }}}
-        <span class="input_error">Некорректное значение</span>
+        {{{ Input type=this.type placeholder=this.placeholder name=this.name class=this.classInput pattern=this.pattern id=this.id errorMessage=this.errorMessage }}}
+        <span class="input__error" id={{this.id}}-error></span>
       {{/each}}
     </div>
     {{{Button label='Зарегистрироваться' class='button' type='submit'}}}

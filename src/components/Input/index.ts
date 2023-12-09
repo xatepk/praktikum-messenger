@@ -2,13 +2,22 @@
 import Block from '../../utils/Block';
 import template from './input.hbs';
 
+export enum eInputType {
+  EMAIL = 'email',
+  TEXT = 'text',
+  TEL = 'tel',
+  PASSWORD = 'password'
+}
+
 interface InputProps {
+  id?: string;
   value?: string;
   class: string;
   placeholder?: string,
   name: string;
-  type: 'email' | 'text' | 'phone',
-  pattern?: string,
+  type: eInputType,
+  pattern: string,
+  errorMessage: string,
   events?: {
     blur: (event: FocusEvent) => void
   }
@@ -20,17 +29,17 @@ export class Input extends Block {
       ...props,
       events: {
         blur: (event: FocusEvent) => {
-          const { value, getAttribute } = event.target as HTMLInputElement;
-          const pattern = getAttribute('pattern');
+          const { value } = event.target as HTMLInputElement;
+          const regexp = new RegExp(props.pattern);
 
-          if(!pattern) return;
-          const { classList } = event.target as HTMLInputElement;
-          const regexp = new RegExp(pattern);
-
-          if (!value.match(regexp)) {
-            classList.add('input_invalid');
+          if (regexp.test(value)) {
+            const errorElement = document.querySelector(`#${props.id}-error`) as HTMLSpanElement;
+            errorElement.textContent = '';
+            errorElement.classList.remove('input__error_visible');
           } else {
-            classList.remove('input_invalid');
+            const errorElement = document.querySelector(`#${props.id}-error`) as HTMLSpanElement;
+            errorElement.textContent = props.errorMessage;
+            errorElement.classList.add('input__error_visible');
           }
         }
       }

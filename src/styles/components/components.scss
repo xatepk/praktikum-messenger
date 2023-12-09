@@ -45,14 +45,9 @@
     -webkit-text-security: disc;
   }
 
-  &_invalid + span {
-    visibility: visible;
+  &__error {
     color: $red;
     font-size: 8px;
-  }
-
-  &_error {
-    visibility: hidden;
   }
 
   &:focus {

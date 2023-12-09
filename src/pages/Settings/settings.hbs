@@ -7,9 +7,9 @@
     {{#each inputs}}
     <div class="profile__info-item">
       <h3 class="profile__info-title">{{ this.title }}</h3>
-      {{{Input type=this.type name=this.name class=../class value=this.value pattern=this.pattern}}}
+      {{{Input type=this.type name=this.name class=../class value=this.value pattern=this.pattern id=this.id errorMessage=this.errorMessage }}}
     </div>
-    <span class="input_error">Некорректное значение</span>
+    <span class="input__error" id={{this.id}}-error></span>
     {{/each}}
     {{{Button ref="button" label='Сохранить' class="button" type='submit'}}}
   </form>
