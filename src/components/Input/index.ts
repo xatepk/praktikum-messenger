@@ -12,7 +12,7 @@ export enum eInputType {
 interface InputProps {
   id?: string;
   value?: string;
-  class: string;
+  classInput: string;
   placeholder?: string,
   name: string;
   type: eInputType,
@@ -44,6 +44,19 @@ export class Input extends Block {
         }
       }
     });
+  }
+
+
+  public setValue(value: string) {
+    return (this.element as HTMLInputElement).value = value;
+  }
+
+  public getName() {
+    return (this.element as HTMLInputElement).name;
+  }
+
+  public getValue() {
+    return (this.element as HTMLInputElement).value;
   }
 
   render() {

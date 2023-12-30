@@ -1,8 +1,8 @@
 <div class="profile">
   <div class="profile__header">
-    {{{ BackButton type=this.type onClick=this.onClick }}}
+    {{{backButton}}}
     <div class="profile__avatar"></div>
-    <p class="profile__info-title profile__info-title_fw">{{this.firstName}}</p>
+    <p class="profile__info-title profile__info-title_fw">{{this.user.first_name}}</p>
   </div>
   <div class="profile__info">
     <div class="profile__info-item">
@@ -15,15 +15,15 @@
     </div>
     <div class="profile__info-item">
       <h3 class="profile__info-title">Имя</h3>
-      <span class="profile__info-value">{{this.user.firstName}}</span>
+      <span class="profile__info-value">{{this.user.first_name}}</span>
     </div>
     <div class="profile__info-item">
       <h3 class="profile__info-title">Фамилия</h3>
-      <span class="profile__info-value">{{this.user.lastName}}</span>
+      <span class="profile__info-value">{{this.user.second_name}}</span>
     </div>
     <div class="profile__info-item">
       <h3 class="profile__info-title">Имя в чате</h3>
-      <span class="profile__info-value">{{this.user.displayName}}</span>
+      <span class="profile__info-value">{{this.user.display_name}}</span>
     </div>
     <div class="profile__info-item">
       <h3 class="profile__info-title">Телефон</h3>
@@ -33,7 +33,7 @@
 
   {{#each buttons}}
   <div class="profile__info-item">
-    {{{Button label=this.label class=this.class type=../type onClick=this.onClick}}}
+    {{{this}}}
   </div>
   {{/each}}
 </div>
