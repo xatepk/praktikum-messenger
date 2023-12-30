@@ -1,3 +1,12 @@
+.app {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .button {
   color: $white;
   font-size: 13px;
@@ -10,7 +19,15 @@
   border-radius: $buttonRadius;
   background-color: $primary;
   margin: 62px auto 0;
+
   @include hover;
+
+  &_st {
+    border: none;
+    background-color: transparent;
+
+    @include hover;
+  }
 
   &_mt {
     margin-top: 160px;
@@ -26,7 +43,11 @@
 
   &_password {
     -webkit-text-security: disc;
-    -moz-appearance: none;
+  }
+
+  &__error {
+    color: $red;
+    font-size: 8px;
   }
 
   &:focus {
@@ -67,6 +88,8 @@
 
   &__item {
     @include li;
+
+    text-align: center;
 
     &_mt {
       margin-top: 20px;

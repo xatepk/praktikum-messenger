@@ -1,0 +1,14 @@
+<div class="app">
+  <h3>Обновляем дизайн, скоро вернемся еще более стильными</h3>
+  <nav>
+    <ul class="list">
+      {{#each buttons}}
+      <li class="list__item list__item_mt">
+        {{{Button label=this.label class=../class type=../type onClick=this.onClick}}}
+      </li>
+      {{/each}}
+    </ul>
+  </nav>
+
+
+</div>

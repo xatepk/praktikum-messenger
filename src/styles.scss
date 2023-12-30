@@ -1,9 +1,11 @@
 
-@import '/src/styles/const.scss';
-@import '/src/styles/mixins.scss';
-@import '/src/styles/vendor/normalize.scss';
-@import '/src/styles/components/components.scss';
-
+@import '/styles/const.scss';
+@import '/styles/mixins.scss';
+@import '/styles/vendor/normalize.scss';
+@import '/styles/components/components.scss';
+@import '/pages/Login/login';
+@import '/pages/Profile/profile';
+@import '/pages/Chats/chats';
 
 html, body {
   font-size: 15px;
@@ -19,8 +21,3 @@ body {
 #app {
   display: flex;
 }
-
-
-@import '/src/pages/login/login';
-@import '/src/pages/profile/profile';
-@import '/src/pages/chats/chats';

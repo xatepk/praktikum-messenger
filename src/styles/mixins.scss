@@ -8,6 +8,7 @@
 @mixin link {
   text-decoration: none;
   color: $primary;
+
   @include hover;
 }
 
