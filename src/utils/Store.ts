@@ -3,7 +3,7 @@ import { EventBus } from './EventBus';
 import Block from './Block';
 import { ChatProps } from '../components/Chat';
 import { User } from '../api/AuthAPI';
-import { Message } from '../components/Message';
+import { Message } from '../controllers/MessagesController';
 
 export enum StoreEvents {
   Updated = 'updated'
