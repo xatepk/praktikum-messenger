@@ -1,0 +1,9 @@
+<li class="chats__item {{#if isSelected }}chats__item_selected{{/if}}">
+  <div class="user__info">
+    <h3 class="user__name">{{title}}</h3>
+    {{#if unread_count}}
+    <span>{{unread_count}}</span>
+    {{/if}}
+  </div>
+</li>
+

@@ -16,7 +16,7 @@ export class AuthController {
 
       await this.fetchUser();
 
-      router.go('/profile');
+      router.go('/messenger');
     } catch (e: any) {
       console.error(e);
     }
@@ -28,7 +28,7 @@ export class AuthController {
 
       await this.fetchUser();
 
-      router.go('/profile');
+      router.go('/messenger');
     } catch (e: any) {
       console.error(e);
     }

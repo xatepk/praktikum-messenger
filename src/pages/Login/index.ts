@@ -10,33 +10,7 @@ import { SignupData } from '../../api/AuthAPI';
 
 export class LoginPage extends Block {
   constructor() {
-    super({
-      // type: 'button',
-      // // onClick: () => { render('register') },
-      // events: {
-      //   submit: (event: Event) => {
-      //     event.preventDefault();
-      //     const target = event.target as HTMLFormElement;
-      //     const fields = target.querySelectorAll<HTMLInputElement>('input');
-
-      //     fields.forEach(function (field) {
-      //       const value = field.value;
-      //       const pattern = field.getAttribute('pattern') as string;
-
-      //       if (!value.match(pattern)) {
-      //         console.log('Неккоректно заполненные данные', field)
-      //       }
-
-      //       const values = Object
-      //         .values(fields)
-      //         .map((child) => ([(child as HTMLInputElement).name, (child as HTMLInputElement).value]))
-
-      //       const data = Object.fromEntries(values);
-      //       console.log('data', data);
-      //     });
-      //   },
-      // },
-    });
+    super({});
   }
 
   init() {

@@ -9,6 +9,11 @@ export interface EditProfile {
   phone: string;
 }
 
+export interface EditPassword {
+  oldPassword: string;
+  newPassword: string;
+}
+
 export class UserAPI extends BaseAPI {
   constructor() {
     super('');
@@ -16,6 +21,14 @@ export class UserAPI extends BaseAPI {
 
   editProfile(data: EditProfile) {
     return this.http.put('/user/profile', data);
+  }
+
+  editPassword(data: EditPassword) {
+    return this.http.put('/user/password', data);
+  }
+
+  editAvatar(data: any) {
+    return this.http.put('/user/profile/avatar', data);
   }
 
   read(): Promise<User> {

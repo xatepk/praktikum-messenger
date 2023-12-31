@@ -10,26 +10,7 @@ import { SignupData } from '../../api/AuthAPI';
 
 export class RegisterPage extends Block {
   constructor() {
-    super({
-      // type: 'button',
-      // // onClick: () => { render('login') },
-      // events: {
-      //   submit: (event: Event) => {
-      //     event.preventDefault();
-      //     const target = event.target as HTMLFormElement;
-      //     const fields = target.querySelectorAll<HTMLInputElement>('input');
-
-      //     fields.forEach(function (field) {
-      //       const value = field.value;
-      //       const pattern = field.getAttribute('pattern') as string;
-
-      //       if (!value.match(pattern)) {
-      //         console.log('Неккоректно заполненные данные', field)
-      //       }
-      //     });
-      //   },
-      // },
-    });
+    super({});
   }
 
   init() {
@@ -152,7 +133,6 @@ export class RegisterPage extends Block {
       .map((child: any) => ([(child.children.input as Input).getName(), (child.children.input as Input).getValue()]))
 
     const data = Object.fromEntries(values);
-    console.log('data', data);
     AuthController.signup(data as SignupData);
   }
 

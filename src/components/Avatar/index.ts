@@ -1,20 +1,17 @@
 import Block from '../../utils/Block';
-import template from './button.hbs';
+import template from './avatar.hbs';
 
-export interface ButtonProps {
-  label?: string;
-  class: string;
-  type?: string;
+export interface AvatarProps {
+  src: string
   onClick?: () => void;
   events?: {
     click: () => void;
   };
 }
 
-export class Button extends Block {
-  constructor(props: ButtonProps) {
+export class Avatar extends Block {
+  constructor(props: AvatarProps) {
     super({
-      type: 'button',
       ...props,
       events: {
         click: props.onClick,

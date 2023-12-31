@@ -5,11 +5,8 @@ import { BackButton } from '../../components/BackButton';
 import router from '../../utils/Router';
 import { Button } from '../../components/Button';
 import AuthController from '../../controllers/AuthController';
-// import { User } from '../../api/AuthAPI';
-
-// interface ProfileProps extends User {}
-
-// const userFields = ['id', 'first_name', 'second_name', 'display_name', 'login', 'avatar', 'email', 'phone'] as Array<keyof ProfileProps>;
+import { Avatar } from '../../components/Avatar';
+import UserController from '../../controllers/UserController';
 
 class ProfilePageBase extends Block {
   constructor(props: any) {
@@ -30,7 +27,8 @@ class ProfilePageBase extends Block {
           label: 'Выйти',
           class: 'profile__info-title profile__info-title_red button_st',
           onClick: () => AuthController.logout(),
-        }]
+        }
+      ],
     })
   }
 
@@ -40,14 +38,50 @@ class ProfilePageBase extends Block {
       onClick: () => router.go('/messenger'),
     });
 
+    this.children.save = new Button({
+      label: 'Сохранить',
+      class: 'button',
+      type: 'button',
+      onClick: () => this.onSaveAvatar(),
+    });
+
+    this.children.close = new Button({
+      class: 'close',
+      type: 'button',
+      onClick: () => this.onCloseModal(),
+    });
+
+    this.children.avatar = new Avatar({
+      src: `https://ya-praktikum.tech/api/v2/resources${this.props?.user.avatar}`,
+      onClick: () => this.onEditAvatar(),
+    });
+
     this.children.buttons = this.props.buttons.map((button: { label: string; class: string; onClick: () => void; }) => {
-      return new Button ({
+      return new Button({
         label: button.label,
         class: button.class,
         type: 'button',
         onClick: button.onClick,
       });
     })
+  }
+
+
+  onEditAvatar() {
+    document.querySelector('#myModal')?.classList.remove('modal__none');
+  }
+
+  onCloseModal() {
+    document.querySelector('#myModal')?.classList.add('modal__none');
+  }
+
+  onSaveAvatar() {
+    const inputFile = document.querySelector('.profile__input-file') as HTMLInputElement;
+    if (inputFile.files) {
+      const data = new FormData();
+      data.append('avatar', inputFile.files[0]);
+      UserController.editAvatar(data as FormData);
+    }
   }
 
   render() {

@@ -18,8 +18,9 @@ interface InputProps {
   type: eInputType,
   pattern: string,
   errorMessage: string,
+  messenger?: boolean,
   events?: {
-    blur: (event: FocusEvent) => void
+    blur?: (event: FocusEvent) => void
   }
 }
 
@@ -29,6 +30,7 @@ export class Input extends Block {
       ...props,
       events: {
         blur: (event: FocusEvent) => {
+          if (props.messenger) return;
           const { value } = event.target as HTMLInputElement;
           const regexp = new RegExp(props.pattern);
 

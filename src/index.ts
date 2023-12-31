@@ -5,13 +5,19 @@ import { ProfilePage } from './pages/Profile';
 import { ChatsPage } from './pages/Chats';
 import AuthController from './controllers/AuthController';
 import { SettingsPage } from './pages/Settings';
+import { PasswordPage } from './pages/Password';
+import { NotFoundPage } from './pages/404';
+import { ServerErrorPage } from './pages/500';
 
 enum Routes {
   Index = '/',
   Register = '/register',
   Profile = '/profile',
   Messenger = '/messenger',
-  Settings = '/settings'
+  Settings = '/settings',
+  Password = '/password',
+  NotFoundPage = '/404',
+  ServerErrorPage = '/500',
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
@@ -21,6 +27,9 @@ window.addEventListener('DOMContentLoaded', async () => {
     .use(Routes.Profile, ProfilePage)
     .use(Routes.Messenger, ChatsPage)
     .use(Routes.Settings, SettingsPage)
+    .use(Routes.Password, PasswordPage)
+    .use(Routes.NotFoundPage, NotFoundPage)
+    .use(Routes.ServerErrorPage, ServerErrorPage)
 
   let isProtectedRoute = true;
 
@@ -37,7 +46,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     Router.start();
 
     if (!isProtectedRoute) {
-      Router.go(Routes.Profile)
+      Router.go(Routes.Messenger)
     }
   } catch (e) {
     console.log('e', e);

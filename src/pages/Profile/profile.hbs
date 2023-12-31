@@ -1,7 +1,17 @@
 <div class="profile">
   <div class="profile__header">
     {{{backButton}}}
-    <div class="profile__avatar"></div>
+    {{{avatar}}}
+    <div id="myModal" class="modal modal__none">
+      <div class="modal-content">
+        {{{close}}}
+        <div id="profile__avatar">
+          <p class="profile__input-desc">Выберите фото профиля</p>
+          <input accept="img/*" type="file" placeholder="Загрузить аватар" class="profile__input-file" title=" " name="avatar" />
+        </div>
+        {{{save}}}
+      </div>
+    </div>
     <p class="profile__info-title profile__info-title_fw">{{this.user.first_name}}</p>
   </div>
   <div class="profile__info">

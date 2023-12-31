@@ -1,0 +1,23 @@
+<div class="chats__column chats__column_right">
+  {{#if selectedChat }}
+  <div class="chats__top">
+    <img class="user__avatar"
+      src="https://images.unsplash.com/photo-1619038779484-a27362fb82cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTAwNXwwfDF8c2VhcmNofDI5fHxhbmltYWxzfGVufDB8fHx8MTcwMDIwODg4NHww&ixlib=rb-4.0.3&q=80&w=400"
+      alt="User 1">
+    <h3 class="user__name">{{title}}</h3>
+  </div>
+  <div class="chats__message-group">
+    <div>
+      {{#each messages}}
+      {{{this}}}
+      {{/each}}
+    </div>
+    <div class="chats__message-input">
+      {{{input}}}
+      {{{button}}}
+    </div>
+    {{else}}
+    <p class="chats__modal">Выберите чат</p>
+    {{/if}}
+  </div>
+</div>
