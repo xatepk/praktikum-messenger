@@ -81,4 +81,6 @@ const withSelectedChatMessages = withStore(state => {
   };
 });
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 export const Messenger = withSelectedChatMessages(MessengerBase);
