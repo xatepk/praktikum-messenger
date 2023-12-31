@@ -11,7 +11,7 @@ import { ServerErrorPage } from './pages/500';
 
 enum Routes {
   Index = '/',
-  Register = '/register',
+  Register = '/sign-up',
   Profile = '/profile',
   Messenger = '/messenger',
   Settings = '/settings',

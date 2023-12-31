@@ -51,7 +51,7 @@ export class LoginPage extends Block {
     this.children.link = new Link({
       label: 'Нет аккаунта?',
       class: 'login__link button_st',
-      to: '/register'
+      to: '/sign-up'
     });
   }
 
