@@ -45,6 +45,8 @@ export class AuthController {
 
       await this.api.logout();
 
+      store.set('messages', []);
+
       router.go('/');
     } catch (e: any) {
       console.error(e.message);

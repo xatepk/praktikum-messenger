@@ -1,9 +1,5 @@
 import Block from '../../utils/Block';
 import template from './messenger.hbs';
-// import { Message } from '../Message';
-// import { Input } from '../Input/input';
-// import { Button } from '../Button';
-// import styles from './styles.module.pcss';
 import MessagesController, { Message as MessageInfo } from '../../controllers/MessagesController';
 import { withStore } from '../../utils/Store';
 import { Button } from '../Button';
@@ -49,7 +45,7 @@ class MessengerBase extends Block<MessengerProps> {
     MessagesController.sendMessage(this.props.selectedChat!, message);
   }
 
-  protected componentDidUpdate(oldProps: MessengerProps, newProps: MessengerProps): boolean {
+  protected componentDidUpdate(_: MessengerProps, newProps: MessengerProps): boolean {
     this.children.messages = this.createMessages(newProps);
 
     return true;
