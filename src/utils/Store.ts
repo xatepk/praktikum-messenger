@@ -15,6 +15,7 @@ export interface IRootStore {
   user: User;
   messages: Record<number, Message[]>;
   messageUser?: string;
+  chatUsers: User[];
 }
 
 const initialUser: User= {
@@ -33,6 +34,7 @@ const initialStore = {
   selectedChat: null,
   user: initialUser,
   messages: {},
+  chatUsers: [],
 }
 
 export class Store extends EventBus {

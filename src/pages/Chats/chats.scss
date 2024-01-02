@@ -95,6 +95,21 @@
     justify-content: center;
     align-items: center;
   }
+
+  &__settings {
+    margin-bottom: 0;
+    flex: 1;
+    margin-left: auto;
+  }
+
+  &__add-user {
+    display: flex;
+    margin-top: 30px;
+  }
+
+  &__add-input {
+    max-width: 100px;
+  }
 }
 
 .user {

@@ -1,9 +1,17 @@
 <div class="chats__column chats__column_left">
     {{{button}}}
     <input class="search-input" type="text" placeholder="Search chats...">
+    {{{add}}}
     <ul class="chats__list">
       {{#each chats}}
       {{{this}}}
       {{/each}}
     </ul>
+    <div id="myModal" class="modal modal__none">
+      <div class="modal-content">
+        {{{close}}}
+        {{{input}}}
+        {{{save}}}
+      </div>
+    </div>
   </div>

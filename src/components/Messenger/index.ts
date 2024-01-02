@@ -5,6 +5,7 @@ import { withStore } from '../../utils/Store';
 import { Button } from '../Button';
 import { eInputType, Input } from '../Input';
 import { Message } from '../Message';
+import { MessengerSettings } from '../MessengerSettings';
 
 interface MessengerProps {
   selectedChat: number | undefined;
@@ -34,14 +35,23 @@ class MessengerBase extends Block<MessengerProps> {
       class: 'chats__message_done button_st',
       onClick: () => this.onSentMessage(),
     });
+
+    this.children.settings = new Button({
+      label: 'Настройки',
+      class: 'button_st chats__button chats__settings',
+      type: 'button',
+      onClick: () => document.querySelector('#settings')?.classList.remove('modal__none'),
+    });
+
+    this.children.modal = new MessengerSettings({});
   }
 
   onSentMessage() {
     const input =this.children.input as Input;
     const message = input.getValue();
 
+    if (message.trim() === '') return;
     input.setValue('');
-
     MessagesController.sendMessage(this.props.selectedChat!, message);
   }
 
@@ -69,7 +79,7 @@ const withSelectedChatMessages = withStore(state => {
     return {
       messages: [],
       selectedChat: undefined,
-      userId: state.user.id
+      userId: state.user.id,
     };
   }
 
@@ -77,7 +87,7 @@ const withSelectedChatMessages = withStore(state => {
     messages: (state.messages || {})[selectedChatId] || [],
     selectedChat: state.selectedChat,
     userId: state.user.id,
-    title: state.messageUser
+    title: state.messageUser,
   };
 });
 

@@ -29,8 +29,23 @@
     @include hover;
   }
 
+  &_end {
+    flex: 1;
+    margin-left: auto !important;
+  }
+
   &_mt {
     margin-top: 160px;
+  }
+
+  &__new-chat {
+    margin-top: 5px;
+  }
+
+  &__add-user {
+    margin-top: 0;
+    width: inherit;
+    padding: 10px;
   }
 }
 

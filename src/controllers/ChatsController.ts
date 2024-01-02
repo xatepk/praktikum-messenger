@@ -27,14 +27,34 @@ class ChatsController {
     store.set('chats', chats);
   }
 
-  addUserToChat(id: number, userId: number) {
-    this.api.addUsers(id, [userId]);
+  async fetchChatUsers(id: number) {
+    const users = await this.api.getUsers(id);
+
+    store.set('chatUsers', users);
+  }
+
+  async addUserToChat(id: number, userId: number) {
+    await this.api.addUsers(id, [userId]);
+
+    this.fetchChatUsers(id);
   }
 
   async delete(id: number) {
     await this.api.delete(id);
 
     this.fetchChats();
+  }
+
+  async deleteUser(id: number, userId: number) {
+    await this.api.deleteUser(id, [userId]);
+
+    this.fetchChatUsers(id);
+  }
+
+  async getUsers(id: number) {
+    await this.api.getUsers(id);
+
+    this.fetchChatUsers(id);
   }
 
   getToken(id: number) {
