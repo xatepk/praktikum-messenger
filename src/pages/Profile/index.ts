@@ -66,6 +66,15 @@ class ProfilePageBase extends Block {
     })
   }
 
+  protected componentDidUpdate(_: any, newProps: any): boolean {
+    this.children.avatar = new Avatar({
+      src: `https://ya-praktikum.tech/api/v2/resources${newProps?.user.avatar}`,
+      onClick: () => this.onEditAvatar(),
+    });
+
+    return true;
+  }
+
 
   onEditAvatar() {
     document.querySelector('#myModal')?.classList.remove('modal__none');
