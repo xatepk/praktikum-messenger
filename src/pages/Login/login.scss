@@ -28,13 +28,16 @@
     flex-direction: column;
   }
 
+  &__input-block {
+    margin-top: 16px;
+  }
+
   &__label {
     color: $grey;
     font-size: 9px;
     font-weight: 500;
     line-height: 9px;
     margin-bottom: 8px;
-    margin-top: 16px;
   }
 
   &__input {

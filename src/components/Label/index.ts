@@ -2,8 +2,8 @@ import Block from '../../utils/Block';
 import template from './label.hbs';
 
 interface LabelProps {
-  label: string;
-  class: string;
+  title: string;
+  classLabel: string;
   for: string,
 }
 

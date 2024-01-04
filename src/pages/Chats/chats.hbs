@@ -1,32 +1,4 @@
 <div class="chats">
-  <div class="chats__column chats__column_left">
-    {{{Button label='Профиль' class='button_st chats__button' type=../type onClick=this.onClick}}}
-    <input class="search-input" type="text" placeholder="Search chats...">
-    <ul class="chats__list">
-      {{#each users}}
-      <li class="chats__item">
-        <img class="user__avatar" src={{this.avatar}} alt={{this.avatar}}>
-        <div class="user__info">
-          <h3 class="user__name">{{this.name}}</h3>
-          <p class="user__last-message">Last message</p>
-        </div>
-      </li>
-      {{/each}}
-    </ul>
-  </div>
-  <div class="chats__column chats__column_right">
-    <div class="chats__top">
-      <img class="user__avatar"
-        src="https://images.unsplash.com/photo-1619038779484-a27362fb82cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTAwNXwwfDF8c2VhcmNofDI5fHxhbmltYWxzfGVufDB8fHx8MTcwMDIwODg4NHww&ixlib=rb-4.0.3&q=80&w=400"
-        alt="User 1">
-      <h3 class="user__name">Вадим</h3>
-    </div>
-    <div class="chats__message-group">
-      <p class="chats__message_text">Message from user 1...</p>
-      <div class="chats__message-input">
-        {{{Input type="text" name='message' class="chats__message" placeholder="Сообщение"}}}
-        {{{Button class="chats__message_done button_st"}}}
-      </div>
-    </div>
-  </div>
+  {{{chatsList}}}
+  {{{messenger}}}
 </div>

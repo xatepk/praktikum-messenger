@@ -1,0 +1,18 @@
+<li class="chats__item {{#if isSelected }}chats__item_selected{{/if}}">
+  {{!-- <div class="user__info"> --}}
+    {{#if avatar}}
+    <img class="user__avatar"
+      src={{avatar}}
+      alt="User avatar">
+    {{else}}
+    <img class="user__avatar"
+      src="https://img.freepik.com/free-photo/adorable-beagle-puppy-solo-portrait_53876-64815.jpg?w=1380&t=st=1704216614~exp=1704217214~hmac=7f8d6ff8a8a3882095da14adcdebefeff8c06f074bedc4ae727ca53c36a28175"
+      alt="User avatar">
+    {{/if}}
+    <h3 class="user__name">{{title}}</h3>
+    {{#if unread_count}}
+    <span>{{unread_count}}</span>
+    {{/if}}
+  {{!-- </div> --}}
+</li>
+

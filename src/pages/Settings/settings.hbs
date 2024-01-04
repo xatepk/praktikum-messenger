@@ -1,16 +1,9 @@
 <div class="profile settings">
-  {{{BackButton type=this.type onClick=this.onClick}}}
-  <div class="profile__header">
-    <div class="profile__avatar"></div>
-  </div>
+  {{{backButton}}}
   <form class="profile__info" onsubmit={{this.onSubmit}}>
     {{#each inputs}}
-    <div class="profile__info-item">
-      <h3 class="profile__info-title">{{ this.title }}</h3>
-      {{{Input type=this.type name=this.name class=../class value=this.value pattern=this.pattern id=this.id errorMessage=this.errorMessage }}}
-    </div>
-    <span class="input__error" id={{this.id}}-error></span>
+      {{{this}}}
     {{/each}}
-    {{{Button ref="button" label='Сохранить' class="button" type='submit'}}}
+    {{{button}}}
   </form>
 </div>

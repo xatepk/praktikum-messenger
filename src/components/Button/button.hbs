@@ -1,1 +1,5 @@
+{{#if label}}
 <button type="{{ type }}" class="{{ class }}">{{ label }}</button>
+{{else}}
+<button type="{{ type }}" class="{{ class }}">&times;</button>
+{{/if}}

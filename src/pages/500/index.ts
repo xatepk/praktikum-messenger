@@ -1,12 +1,19 @@
+import { Button } from '../../components/Button';
 import Block from '../../utils/Block';
+import router from '../../utils/Router';
 import template from './500.hbs';
-import { render } from '../../utils/render';
 
 export class ServerErrorPage extends Block {
   constructor() {
-    super({
+    super({});
+  }
+
+  init() {
+    this.children.button = new Button({
+      class: 'error-page__back button_st',
       type: 'button',
-      onClick: () => { render('home') },
+      label: 'Назад к чатам',
+      onClick: () => router.go('/messenger'),
     });
   }
 

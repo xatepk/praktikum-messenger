@@ -1,0 +1,17 @@
+<div>
+  <div class={{classInputBlock}}>
+    {{#if inputTitle}}
+    <h3 class="profile__info-title">{{inputTitle}}</h3>
+    {{/if}}
+    {{#if for}}
+    {{{label}}}
+    {{/if}}
+    {{{input}}}
+    {{#unless inputTitle}}
+    <span class="input__error" id={{id}}-error></span>
+    {{/unless}}
+  </div>
+  {{#if inputTitle}}
+  <span class="input__error" id={{id}}-error></span>
+  {{/if}}
+</div>

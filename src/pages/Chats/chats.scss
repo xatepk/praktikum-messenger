@@ -9,9 +9,11 @@
 
     &_left {
       max-width: 200px;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       border-right: 1px solid #EAEAEA;
+      box-sizing: border-box;
     }
 
 
@@ -41,6 +43,10 @@
     padding-top: 10px;
     padding-bottom: 10px;
     border-top: 1px solid #EAEAEA;
+
+    &_selected {
+      background-color: $primary;
+    }
   }
 
   &__button {
@@ -69,6 +75,7 @@
     }
 
     &_done {
+      color: transparent;
       margin-left: 10px;
       width: 28px;
       height: 28px;
@@ -81,6 +88,27 @@
   &__message-input {
     display: flex;
     align-items: center;
+  }
+
+  &__modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__settings {
+    margin-bottom: 0;
+    flex: 1;
+    margin-left: auto;
+  }
+
+  &__add-user {
+    display: flex;
+    margin-top: 30px;
+  }
+
+  &__add-input {
+    max-width: 100px;
   }
 }
 
@@ -111,3 +139,17 @@
     margin-left: 10px;
   }
 }
+
+.message {
+  padding: 15px 10px;
+  margin: 15px 0;
+  max-width: 150px;
+  background: #e9ffff;
+  border-radius: 6px;
+
+  &_mine {
+    margin-left: auto;
+    background: #4c75de;
+  }
+}
+
