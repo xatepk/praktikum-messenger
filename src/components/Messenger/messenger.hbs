@@ -1,0 +1,22 @@
+<div class="chats__column chats__column_right">
+  {{#if selectedChat }}
+  <div class="chats__top">
+    <h3 class="user__name">{{title}}</h3>
+    {{{settings}}}
+  </div>
+  <div class="chats__message-group">
+    <div>
+      {{#each messages}}
+      {{{this}}}
+      {{/each}}
+    </div>
+    <div class="chats__message-input">
+      {{{input}}}
+      {{{button}}}
+    </div>
+  </div>
+  {{{modal}}}
+  {{else}}
+  <p class="chats__modal">Выберите чат</p>
+  {{/if}}
+</div>

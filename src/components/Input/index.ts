@@ -12,14 +12,15 @@ export enum eInputType {
 interface InputProps {
   id?: string;
   value?: string;
-  class: string;
+  classInput: string;
   placeholder?: string,
   name: string;
   type: eInputType,
   pattern: string,
   errorMessage: string,
+  messenger?: boolean,
   events?: {
-    blur: (event: FocusEvent) => void
+    blur?: (event: FocusEvent) => void
   }
 }
 
@@ -29,6 +30,7 @@ export class Input extends Block {
       ...props,
       events: {
         blur: (event: FocusEvent) => {
+          if (props.messenger) return;
           const { value } = event.target as HTMLInputElement;
           const regexp = new RegExp(props.pattern);
 
@@ -44,6 +46,19 @@ export class Input extends Block {
         }
       }
     });
+  }
+
+
+  public setValue(value: string) {
+    return (this.element as HTMLInputElement).value = value;
+  }
+
+  public getName() {
+    return (this.element as HTMLInputElement).name;
+  }
+
+  public getValue() {
+    return (this.element as HTMLInputElement).value;
   }
 
   render() {

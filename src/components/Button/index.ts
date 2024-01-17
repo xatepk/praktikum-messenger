@@ -1,10 +1,10 @@
 import Block from '../../utils/Block';
 import template from './button.hbs';
 
-interface ButtonProps {
-  label: string;
+export interface ButtonProps {
+  label?: string;
   class: string;
-  type?: 'submit' | 'button',
+  type?: string;
   onClick?: () => void;
   events?: {
     click: () => void;
@@ -14,11 +14,11 @@ interface ButtonProps {
 export class Button extends Block {
   constructor(props: ButtonProps) {
     super({
+      type: 'button',
       ...props,
       events: {
-        click: props.onClick
-      }
-    });
+        click: props.onClick,
+    } });
   }
 
   render() {
