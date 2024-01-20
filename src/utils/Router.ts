@@ -115,6 +115,12 @@ class Router {
   private getRoute(pathname: string) {
     return this.routes.find(route => route.match(pathname));
   }
+  
+  public reset() {
+    delete Router.__instance;
+
+    new Router(this.rootQuery);
+  }
 }
 
 export default new Router('#app');

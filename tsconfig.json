@@ -1,7 +1,10 @@
 {
+  "ts-node": {
+    "files": true,
+  },
   "compilerOptions": {
     "target": "es2016",
-    "module": "commonjs",
+    "module": "es6",
     "typeRoots": ["./node_modules/@types", "./src/typings"],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -12,6 +15,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "sourceMap": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true
   }
 }

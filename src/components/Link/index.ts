@@ -1,5 +1,5 @@
-import Block from '../../utils/Block';
-import { PropsWithRouter, withRouter } from '../../hocs/withRouter';
+import Block from '../../utils/Block.ts';
+import { PropsWithRouter, withRouter } from '../../hocs/withRouter.ts';
 import template from './link.hbs';
 
 interface LinkProps extends PropsWithRouter {
@@ -11,7 +11,7 @@ interface LinkProps extends PropsWithRouter {
   };
 }
 
-class BaseLink extends Block<LinkProps> {
+export class BaseLink extends Block<LinkProps> {
   constructor(props: LinkProps) {
     super({
       ...props,

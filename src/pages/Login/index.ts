@@ -64,6 +64,7 @@ export class LoginPage extends Block {
       })
 
     const data = Object.fromEntries(values);
+    console.log('data', data);
 
     AuthController.signin(data as SignupData);
   }
