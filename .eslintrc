@@ -1,4 +1,12 @@
 {
+  "globals": {
+    "window": true
+  },
+  "env": {
+    "browser": true,
+     "es6": true,
+     "jest": true
+  },
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": [
