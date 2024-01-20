@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { JSDOM } from 'jsdom';
 
 const { window } = new JSDOM('<div id="app"></div>', { url: 'http://localhost:3000' });
