@@ -14,7 +14,7 @@
     "sourceMap": true,
     "strictNullChecks": true,
     "noEmit": true,
-    "moduleResolution": "NodeNext",
+    // "moduleResolution": "NodeNext",
     "allowImportingTsExtensions": true
   }
 }
