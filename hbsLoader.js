@@ -1,6 +1,7 @@
 import Handlebars from 'handlebars';
+import createLoader from 'create-esm-loader';
 
-export const hbsLoader = {
+const hbsLoader = {
   resolve: (specifier, options) => {
     const { href, pathname } = new URL(specifier, options.parentURL)
 
@@ -39,3 +40,10 @@ export const hbsLoader = {
   }
 }
 
+export const {
+  resolve,
+  load,
+  getFormat,
+  getSource,
+  transformSource,
+} = await createLoader(hbsLoader)

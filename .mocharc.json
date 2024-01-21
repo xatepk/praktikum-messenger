@@ -6,7 +6,6 @@
   ],
   "node-option": [
     "loader=esmock",
-    "loader=node-esm-loader",
     "loader=./hbsLoader.js",
     "loader=esm-loader-typescript",
     "loader=esm-loader-css"

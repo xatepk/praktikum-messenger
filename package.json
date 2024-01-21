@@ -28,6 +28,7 @@
     "@typescript-eslint/eslint-plugin": "6.13.2",
     "@typescript-eslint/parser": "6.13.2",
     "chai": "5.0.0",
+    "create-esm-loader": "^0.2.5",
     "eslint": "8.55.0",
     "esm-loader-css": "1.0.6",
     "esm-loader-typescript": "1.0.6",

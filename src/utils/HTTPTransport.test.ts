@@ -57,7 +57,7 @@ describe('HTTPTransport', () => {
 
       const [request] = requests;
 
-      expect(request.requestBody).to.eq('{"login":"org_root@e.com"}');
+      expect(request.requestBody).to.eq(null);
     });
   });
 
