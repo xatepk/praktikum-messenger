@@ -1,6 +1,6 @@
 import Block from './Block';
 
-interface BlockConstructable<P extends Record<string, unknown> = any> {
+export interface BlockConstructable<P extends Record<string, unknown> = any> {
   new(props: P): Block<P>;
 }
 
@@ -50,7 +50,7 @@ class Route {
 }
 
 class Router {
-  private static __instance: Router;
+  private static __instance?: Router;
   private routes: Route[] = [];
   private currentRoute: Route | null = null;
   private history = window.history;
@@ -115,7 +115,7 @@ class Router {
   private getRoute(pathname: string) {
     return this.routes.find(route => route.match(pathname));
   }
-  
+
   public reset() {
     delete Router.__instance;
 

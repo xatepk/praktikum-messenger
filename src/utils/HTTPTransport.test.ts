@@ -64,7 +64,7 @@ describe('HTTPTransport', () => {
 
 
   it('.put() should send Put request', () => {
-    instance.put('/user/password');
+    instance.put('/user/password', { oldPassword: '123QWERTy@', newPassword: '456QWERTy@' });
 
     const [request] = requests;
 
@@ -72,7 +72,14 @@ describe('HTTPTransport', () => {
   });
 
   it('.patch() should send Patch request', () => {
-    instance.patch('/user/profile');
+    instance.patch('/user/profile', {
+      'email': '123@123lol.com',
+      'login': 'lolipop',
+      'first_name': 'Jun',
+      'second_name': 'Jul',
+      'display_name': '',
+      'phone': '89182736547'
+  });
 
     const [request] = requests;
 
