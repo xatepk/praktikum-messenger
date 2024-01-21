@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "es2016",
-    "module": "es6",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "typeRoots": ["./node_modules/@types", "./src/typings"],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
