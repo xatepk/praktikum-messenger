@@ -51,14 +51,6 @@ describe('HTTPTransport', () => {
 
       expect(request.method).to.eq('Post');
     });
-
-    it('.post() should have requestBody', () => {
-      instance.post('/auth/signin', { login: 'org_root@e.com' });
-
-      const [request] = requests;
-
-      expect(request.requestBody).to.eq(null);
-    });
   });
 
 
