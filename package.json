@@ -10,32 +10,49 @@
     "preview": "vite preview",
     "stylelint": "npx stylelint \"**/*.scss\"",
     "eslint": "eslint . --ext .ts",
-    "eslint-fix": "eslint . --ext .ts --fix"
+    "eslint-fix": "eslint . --ext .ts --fix",
+    "test": "mocha",
+    "prepare": "husky install"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/chai": "4.3.11",
     "@types/hbs": "4.0.4",
+    "@types/jsdom": "21.1.6",
+    "@types/mocha": "10.0.6",
     "@types/node": "20.10.4",
-    "@typescript-eslint/eslint-plugin": "^6.13.2",
-    "@typescript-eslint/parser": "^6.13.2",
-    "eslint": "^8.55.0",
+    "@types/sinon": "17.0.3",
+    "@typescript-eslint/eslint-plugin": "6.13.2",
+    "@typescript-eslint/parser": "6.13.2",
+    "chai": "5.0.0",
+    "create-esm-loader": "^0.2.5",
+    "eslint": "8.55.0",
+    "esm-loader-css": "1.0.6",
+    "esm-loader-typescript": "1.0.6",
+    "esmock": "2.6.2",
+    "husky": "8.0.3",
+    "jsdom": "23.2.0",
+    "mocha": "10.2.0",
+    "node-esm-loader": "0.3.0",
     "sass": "1.69.5",
+    "sinon": "17.0.1",
     "stylelint": "16.0.0",
     "stylelint-config-standard": "35.0.0",
     "ts-node": "10.9.1",
     "typescript": "5.3.3",
-    "vite": "4.4.5",
+    "vite": "^4.5.2",
     "vite-plugin-handlebars": "1.6.0"
   },
   "dependencies": {
     "express": "4.18.2",
-    "express-history-api-fallback": "^2.2.1",
+    "express-history-api-fallback": "2.2.1",
     "handlebars": "4.7.8"
   },
   "engines": {
-    "node": "18.16.0"
+    "node": "20.11.0"
   },
   "repository": {
     "type": "git",
